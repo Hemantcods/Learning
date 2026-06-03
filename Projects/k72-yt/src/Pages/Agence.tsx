@@ -26,7 +26,12 @@ const Agence = () => {
         start:'top 20%',
         end:'top -80%',
         pin:true,
-        scrub:true,
+        pinSpacing:true,
+        pinReparent:true,
+        pinType:'transform',
+        invalidateOnRefresh:true,
+        scrub:1,
+        markers:true,
         onUpdate:function(elem){
           let imageindex
           if (elem.progress<1){
@@ -42,9 +47,9 @@ const Agence = () => {
   })
   return (
     <div>
-      <div className="section1">
+      <div className="section1 py-1">
         <div
-          className="absolute overflow-hidden w-[15vw] h-[20vw] rounded-4xl top-[20vh] left-[30vw]"
+          className="absolute overflow-hidden w-[15vw] h-[20vw] rounded-4xl top-[20vh] left-[20vw]"
           ref={imageDivRef}
         >
           <img
