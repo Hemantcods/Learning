@@ -1,8 +1,11 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 
 const HomeBottomText = () => {
   return (
-    <div>HomeBottomText</div>
+    <div className='font-[font2] flex items-center justify-center gap-2 '>
+      <Link className='text-[5vw] hover:border-[#D3FD50] hover:text-[#D3FD50] leading-[7ww] border-2 border-white rounded-full px-8 py-2 pt-3 uppercase' to={'/projects'}>Projects</Link>
+      <Link className='text-[5vw] hover:border-[#D3FD50] hover:text-[#D3FD50] leading-[7ww] border-2 border-white rounded-full px-8 py-2 pt-3 uppercase' to={'/agence'}>Agence</Link>
+    </div>
   )
 }
 
