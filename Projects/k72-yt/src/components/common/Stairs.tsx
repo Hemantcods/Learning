@@ -10,6 +10,7 @@ const Stairs = ({ children }) => {
   useGSAP(
     function () {
       const tl = gsap.timeline();
+      tl.set(stairParentRef.current, { display: "block" });
       tl.from(".stair", {
         height: 0,
         stagger: {
@@ -35,7 +36,7 @@ const Stairs = ({ children }) => {
         scale:1.2
       })
     },
-    [currentPath],
+    { dependencies: [currentPath], revertOnUpdate: true }
   );
   return (
     <div>
