@@ -31,7 +31,7 @@ const Agence = () => {
         pinType:'transform',
         invalidateOnRefresh:true,
         scrub:1,
-        markers:true,
+        // markers:true,
         onUpdate:function(elem){
           let imageindex
           if (elem.progress<1){

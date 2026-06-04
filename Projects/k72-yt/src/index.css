@@ -12,3 +12,26 @@
 body{
   background-color: black;
 }
+
+.moveX{
+  animation-name: moveAnimation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes moveAnimation {
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-100%);
+  }
+}
+
+.moveLink{
+  opacity: 0;
+  transition: all ease 0.3s;
+}
+.moveL:hover .moveLink{
+  opacity: 1;
+}
