@@ -1,7 +1,8 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import  { useRef } from "react";
+import  { useContext, useRef } from "react";
+import { NavbarColourContext } from "../context/NavContext";
 
 const Agence = () => {
   const imageDivRef = useRef(null);
@@ -47,9 +48,9 @@ const Agence = () => {
   })
   return (
     <div>
-      <div className="section1 py-1 bg-black">
+      <div className="section1 py-1 text-black relative">
         <div
-          className="absolute overflow-hidden w-[15vw] h-[20vw] rounded-4xl top-[20vh] left-[20vw]"
+          className="absolute overflow-hidden lg:w-[15vw] lg:h-[20vw] h-70 w-50 rounded-4xl  lg:top-[20vh] left-[20vw]"
           ref={imageDivRef}
         >
           <img
@@ -59,14 +60,14 @@ const Agence = () => {
             ref={imageRef}
           />
         </div>
-        <div className="relative font-[font2]">
-          <div className="mt-[55vh]">
-            <h1 className="text-[17vw] uppercase leading-[17vw] ">
+        <div className="relative font-[font2] ">
+          <div className="lg:mt-[55vh] mt-[40vh]">
+            <h1 className="text-[17vw] uppercase leading-[17vw] text-center ">
               Soixan7th <br /> Twelve
             </h1>
           </div>
-          <div className="pl-[40%] ">
-            <p className="text-5xl ">
+          <div className=" lg:pl-[40%] text-center ">
+            <p className="text-5xl leading-tight ">
               &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; Our curiosity
               fuels our creativity. We remain humble and say no to big egos,
               even yours. A brand is alive. She has values, a personality, a

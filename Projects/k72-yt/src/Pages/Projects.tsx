@@ -30,29 +30,29 @@ const Projects = () => {
 gsap.registerPlugin(ScrollTrigger);
 useGSAP(function () {
   gsap.from('.hero',{
-    height:'100px',
+    height:'50px',
     stagger:{
-      amount:0.5
+      amount:0.8
     },
     scrollTrigger:{
       trigger:".hello",
       start:"top 100%",
       end:"top -150%",
-      scrub:true
+      scrub:true,
     }
   })
 })
   return (
     <div className="p-4">
       <div className=" pt-[45vh]">
-        <h2 className="font-[font2] text-black text-[9vw] uppercase">
+        <h2 className="font-[font2] text-black text-[9vw] sm:text-[13vh] sm:leading-[10vh] uppercase">
           Projects
         </h2>
       </div>
-      <div className="-mt-15 hello">
+      <div className="lg:-mt-15 sm:mt-0 hello">
         {Project.map((item, idx) => {
           return (
-            <div key={idx} className="hero w-full h-[850px]  flex gap-3 mb-3">
+            <div key={idx} className="hero w-full h-[850px] flex lg:gap-3 sm:gap-1 mb-3 lg:flex-row flex-col">
               <ProjectCard key={idx} {...item} />;
             </div>
           );

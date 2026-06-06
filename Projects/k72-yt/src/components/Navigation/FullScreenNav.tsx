@@ -77,7 +77,7 @@ const FullScreenNav = () => {
       <div ref={fullNavLinkRef} className="relative">
         <div className="flex w-full items-start justify-between p-5">
           <div className="">
-            <div className="h-20 w-40">
+            <div className="w-40 sm:w-30">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103 44">
                 <path
                   fillRule="evenodd"
@@ -98,13 +98,13 @@ const FullScreenNav = () => {
           </div>
         </div>
         <div id="all-links" className="py-32">
-          <div className="relative origin-top border-t border-white moveL">
-            <h1 className="font-[font1] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
+          <div className="relative origin-top border-t sm:bordeer-t-[0.5px] border-white/50 moveL">
+            <h1 className="font-[font2] text-[7vw] uppercase leading-[0.8] pt-10 sm:pt-4 text-center">
               Projects
             </h1>
             <div className="moveLink absolute flex top-0 bg-[#D3FD50] w-full overflow-hidden h-full">
               <div className=" flex items-center moveX  text-black">
-                <h2 className="whitespace-nowrap font-[font1] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
+                <h2 className="whitespace-nowrap font-[font2] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
                   to see everything
                 </h2>
                 <img
@@ -112,7 +112,7 @@ const FullScreenNav = () => {
                   alt=""
                   className="h-36 w-96 object-cover shrink-0 rounded-full"
                 />
-                <h2 className="whitespace-nowrap font-[font1] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
+                <h2 className="whitespace-nowrap font-[font2] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
                   to see everything
                 </h2>
                 <img
@@ -122,7 +122,7 @@ const FullScreenNav = () => {
                 />
               </div>
               <div className=" flex items-center moveX  text-black">
-                <h2 className="whitespace-nowrap font-[font1] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
+                <h2 className="whitespace-nowrap font-[font2] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
                   to see everything
                 </h2>
                 <img
@@ -130,7 +130,7 @@ const FullScreenNav = () => {
                   alt=""
                   className="h-36 w-96 object-cover shrink-0 rounded-full"
                 />
-                <h2 className="whitespace-nowrap font-[font1] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
+                <h2 className="whitespace-nowrap font-[font2] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
                   to see everything
                 </h2>
                 <img
@@ -141,13 +141,13 @@ const FullScreenNav = () => {
               </div>
             </div>
           </div>
-          <div className="relative origin-top border-t border-white moveL">
-            <h1 className="font-[font1] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
-              Projects
+          <div className="relative origin-top border-t border-white/50 moveL">
+            <h1 className="font-[font2] text-[7vw] uppercase leading-[0.8] pt-10 sm:pt-4 text-center">
+              Agency
             </h1>
             <div className="moveLink absolute flex top-0 bg-[#D3FD50] w-full overflow-hidden h-full">
               <div className=" flex items-center moveX  text-black">
-                <h2 className="whitespace-nowrap font-[font1] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
+                <h2 className="whitespace-nowrap font-[font2] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
                   to see everything
                 </h2>
                 <img
@@ -155,7 +155,7 @@ const FullScreenNav = () => {
                   alt=""
                   className="h-36 w-96 object-cover shrink-0 rounded-full"
                 />
-                <h2 className="whitespace-nowrap font-[font1] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
+                <h2 className="whitespace-nowrap font-[font2] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
                   to see everything
                 </h2>
                 <img
@@ -165,7 +165,7 @@ const FullScreenNav = () => {
                 />
               </div>
               <div className=" flex items-center moveX  text-black">
-                <h2 className="whitespace-nowrap font-[font1] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
+                <h2 className="whitespace-nowrap font-[font2] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
                   to see everything
                 </h2>
                 <img
@@ -173,7 +173,7 @@ const FullScreenNav = () => {
                   alt=""
                   className="h-36 w-96 object-cover shrink-0 rounded-full"
                 />
-                <h2 className="whitespace-nowrap font-[font1] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
+                <h2 className="whitespace-nowrap font-[font2] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
                   to see everything
                 </h2>
                 <img
@@ -184,13 +184,13 @@ const FullScreenNav = () => {
               </div>
             </div>
           </div>
-          <div className="relative origin-top border-t border-white moveL">
-            <h1 className="font-[font1] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
-              Projects
+          <div className="relative origin-top border-t border-white/50 moveL">
+            <h1 className="font-[font2] text-[7vw] uppercase leading-[0.8] pt-10 sm:pt-4 text-center">
+              contact
             </h1>
             <div className="moveLink absolute flex top-0 bg-[#D3FD50] w-full overflow-hidden h-full">
               <div className=" flex items-center moveX  text-black">
-                <h2 className="whitespace-nowrap font-[font1] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
+                <h2 className="whitespace-nowrap font-[font2] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
                   to see everything
                 </h2>
                 <img
@@ -198,7 +198,7 @@ const FullScreenNav = () => {
                   alt=""
                   className="h-36 w-96 object-cover shrink-0 rounded-full"
                 />
-                <h2 className="whitespace-nowrap font-[font1] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
+                <h2 className="whitespace-nowrap font-[font2] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
                   to see everything
                 </h2>
                 <img
@@ -208,7 +208,7 @@ const FullScreenNav = () => {
                 />
               </div>
               <div className=" flex items-center moveX  text-black">
-                <h2 className="whitespace-nowrap font-[font1] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
+                <h2 className="whitespace-nowrap font-[font2] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
                   to see everything
                 </h2>
                 <img
@@ -216,7 +216,7 @@ const FullScreenNav = () => {
                   alt=""
                   className="h-36 w-96 object-cover shrink-0 rounded-full"
                 />
-                <h2 className="whitespace-nowrap font-[font1] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
+                <h2 className="whitespace-nowrap font-[font2] text-[7vw] uppercase leading-[0.8] pt-10 text-center">
                   to see everything
                 </h2>
                 <img
@@ -227,13 +227,13 @@ const FullScreenNav = () => {
               </div>
             </div>
           </div>
-          <div className="relative origin-top border-t border-white moveL">
-            <h1 className="font-[font1] text-[7vw] uppercase leading-[0.9] pt-10 text-center">
-              Projects
+          <div className="relative origin-top border-t border-b border-white/50 moveL">
+            <h1 className="font-[font2] text-[7vw] uppercase leading-[0.9] pt-10 sm:pt-4 text-center">
+              blog
             </h1>
             <div className="moveLink absolute flex top-0 bg-[#D3FD50] w-full overflow-hidden h-full">
               <div className=" flex items-center moveX  text-black">
-                <h2 className="whitespace-nowrap font-[font1] text-[7vw] uppercase leading-[0.9] pt-10 text-center">
+                <h2 className="whitespace-nowrap font-[font2] text-[7vw] uppercase leading-[0.9] pt-10 text-center">
                   to see everything
                 </h2>
                 <img
@@ -241,7 +241,7 @@ const FullScreenNav = () => {
                   alt=""
                   className="h-36 w-96 object-cover shrink-0 rounded-full"
                 />
-                <h2 className="whitespace-nowrap font-[font1] text-[7vw] uppercase leading-[0.9] pt-10 text-center">
+                <h2 className="whitespace-nowrap font-[font2] text-[7vw] uppercase leading-[0.9] pt-10 text-center">
                   to see everything
                 </h2>
                 <img
@@ -251,7 +251,7 @@ const FullScreenNav = () => {
                 />
               </div>
               <div className=" flex items-center moveX  text-black">
-                <h2 className="whitespace-nowrap font-[font1] text-[7vw] uppercase leading-[0.9] pt-10 text-center">
+                <h2 className="whitespace-nowrap font-[font2] text-[7vw] uppercase leading-[0.9] pt-10 text-center">
                   to see everything
                 </h2>
                 <img
@@ -259,7 +259,7 @@ const FullScreenNav = () => {
                   alt=""
                   className="h-36 w-96 object-cover shrink-0 rounded-full"
                 />
-                <h2 className="whitespace-nowrap font-[font1] text-[7vw] uppercase leading-[0.9] pt-10 text-center">
+                <h2 className="whitespace-nowrap font-[font2] text-[7vw] uppercase leading-[0.9] pt-10 text-center">
                   to see everything
                 </h2>
                 <img
