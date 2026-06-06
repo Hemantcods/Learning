@@ -44,16 +44,16 @@ useGSAP(function () {
 })
   return (
     <div className="p-4">
-      <div className=" pt-[45vh]">
+      <div className="pt-[45vh]">
         <h2 className="font-[font2] text-black text-[9vw] sm:text-[13vh] sm:leading-[10vh] uppercase">
           Projects
         </h2>
       </div>
-      <div className="lg:-mt-15 sm:mt-0 hello">
+      <div className=" sm:mt-0  hello">
         {Project.map((item, idx) => {
           return (
             <div key={idx} className="hero w-full h-[850px] flex lg:gap-3 sm:gap-1 mb-3 lg:flex-row flex-col">
-              <ProjectCard key={idx} {...item} />;
+              <ProjectCard key={idx} {...item} />
             </div>
           );
         })}
