@@ -1,9 +1,10 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
+import type { ReactNode } from "react";
 import { useLocation } from "react-router-dom";
 
-const Stairs = ({ children }) => {
+const Stairs = ({ children }: { children: ReactNode }) => {
   const currentPath = useLocation().pathname;
   const pageref = useRef(null);
   const stairParentRef = useRef(null);

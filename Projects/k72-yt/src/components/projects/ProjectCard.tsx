@@ -1,4 +1,4 @@
-const ProjectCard = (props) => {
+const ProjectCard = (props: any) => {
   return (
     <>
       <div className="lg:w-1/2 w-full group h-full bg-blue-300 transition-all hover:rounded-[50px] overflow-hidden relative">

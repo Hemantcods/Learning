@@ -2,9 +2,9 @@ import { useContext, useRef } from "react";
 import { NavbarColourContext, NavBarContext } from "../../context/NavContext";
 
 const Navbar = () => {
-  const navGreenref = useRef(null);
-  const [navOpen, setnavOpen] = useContext(NavBarContext);
-  const [navColour, setnavColour] = useContext(NavbarColourContext);
+  const navGreenref = useRef<HTMLDivElement>(null);
+  const [navOpen, setnavOpen] = useContext(NavBarContext)!;
+  const [navColour, setnavColour] = useContext(NavbarColourContext)!;
   return (
     <div className="flex fixed top-0 w-full z-10 items-start justify-between ">
       <div className="p-5 ">
@@ -22,10 +22,14 @@ const Navbar = () => {
       <div
         className=" h-12 lg:16 sm:10 w-70 sm:w-44 relative bg-black"
         onMouseEnter={() => {
-          navGreenref.current.style.height = "100%";
+          if (navGreenref.current) {
+            navGreenref.current.style.height = "100%";
+          }
         }}
         onMouseLeave={() => {
-          navGreenref.current.style.height = "0%";
+          if (navGreenref.current) {
+            navGreenref.current.style.height = "0%";
+          }
         }}
         onClick={() => {
           setnavOpen(true);

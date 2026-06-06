@@ -6,14 +6,13 @@ import { NavBarContext } from "../../context/NavContext";
 const FullScreenNav = () => {
   const fullNavLinkRef = useRef(null);
   const fullScreenRef = useRef(null);
-  const Navcontext = useContext(NavBarContext);
-  const [navOpen, setnavOpen] = Navcontext;
+  const [navOpen, setnavOpen] = useContext(NavBarContext)!;
 
-  const tl = useRef(null);
+  const tl = useRef<gsap.core.Timeline | null>(null);
 
   useGSAP(function () {
     // 1. Create the timeline once and set it to paused initially
-    tl.current = gsap.timeline({
+    const timeline = gsap.timeline({
       paused: true,
       onReverseComplete: function () {
         // Wait for the reverse animation to finish before hiding the container
@@ -21,25 +20,26 @@ const FullScreenNav = () => {
       },
     });
 
-    tl.current.from(".stairing", {
+    timeline.from(".stairing", {
       delay: 0.5, // Reduced from 1 to 0.3 so reversing doesn't awkwardly stall at the end
       height: 0,
       stagger: {
         amount: -0.5,
       },
     });
-    tl.current.from(fullNavLinkRef.current, {
+    timeline.from(fullNavLinkRef.current, {
       opacity: 0,
     });
-    tl.current.from(".moveL", {
+    timeline.from(".moveL", {
       rotateX: 90,
       stagger: {
         amount: 0.2,
       },
     });
-    tl.current.from(".navlink", {
+    timeline.from(".navlink", {
       opacity: 0,
     });
+    tl.current = timeline;
   }, []); // Run only once on mount
 
   useGSAP(
