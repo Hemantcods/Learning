@@ -1,6 +1,7 @@
 # StackX Todo
 
-A clean, folder-based todo app built with React and Tailwind CSS.
+A clean, folder-based todo app built with React and Tailwind CSS.  
+**Live:** [stackxtodo.vercel.app](https://stackxtodo.vercel.app/)
 
 ## Features
 
