@@ -34,7 +34,10 @@ function loadFromStorage(key, fallback) {
 
 export default function StaxTodoApp() {
   const [folders, setFolders] = useState(() => loadFromStorage("stax:folders", DEFAULT_FOLDERS));
-  const [todos, setTodos] = useState(() => loadFromStorage("stax:todos", DEFAULT_TODOS));
+  const [todos, setTodos] = useState(() => {
+    const loaded = loadFromStorage("stax:todos", DEFAULT_TODOS);
+    return loaded.map((t, i) => ({ ...t, order: t.order ?? i }));
+  });
   const [activeFolder, setActiveFolder] = useState("general");
   const [filter, setFilter] = useState("all");
   const [search, setSearch] = useState("");
@@ -63,7 +66,7 @@ export default function StaxTodoApp() {
   const visibleTodos = scopedTodos
     .filter(t => filter === "all" ? true : filter === "active" ? !t.done : t.done)
     .filter(t => t.text.toLowerCase().includes(search.toLowerCase()))
-    .sort((a, b) => (a.done === b.done ? b.createdAt - a.createdAt : a.done ? 1 : -1));
+    .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 
   const countsFor = (folderId) => {
     const list = folderId === "general" ? todos : todos.filter(t => t.folderId === folderId);
@@ -78,14 +81,12 @@ export default function StaxTodoApp() {
     const text = newTodoText.trim();
     if (!text) return;
     const todo = {
-      id: uid(),
-      text,
-      done: false,
+      id: uid(), text, done: false,
       folderId: activeFolder === "general" ? "general" : activeFolder,
-      priority: newTodoPriority,
-      createdAt: Date.now(),
+      priority: newTodoPriority, createdAt: Date.now(),
+      order: 0,
     };
-    setTodos(prev => [todo, ...prev]);
+    setTodos(prev => [todo, ...prev.map(t => ({ ...t, order: (t.order ?? 0) + 1 }))]);
     setNewTodoText("");
   };
 
@@ -142,6 +143,23 @@ export default function StaxTodoApp() {
     setFolders(prev => prev.filter(f => f.id !== id));
     setTodos(prev => prev.map(t => t.folderId === id ? { ...t, folderId: "general" } : t));
     if (activeFolder === id) setActiveFolder("general");
+  };
+
+  const handleReorder = (activeId, overId) => {
+    if (search.trim()) return;
+    setTodos(prev => {
+      const visibleIds = visibleTodos.map(t => t.id);
+      if (!visibleIds.includes(activeId) || !visibleIds.includes(overId)) return prev;
+      const oldIdx = visibleIds.indexOf(activeId);
+      const newIdx = visibleIds.indexOf(overId);
+      if (oldIdx === newIdx) return prev;
+      const reordered = [...visibleIds];
+      reordered.splice(oldIdx, 1);
+      reordered.splice(newIdx, 0, activeId);
+      const orderMap = {};
+      reordered.forEach((id, idx) => { orderMap[id] = idx; });
+      return prev.map(t => orderMap[t.id] !== undefined ? { ...t, order: orderMap[t.id] } : t);
+    });
   };
 
   const handleKey = (e, cb) => {
@@ -207,6 +225,7 @@ export default function StaxTodoApp() {
             onCyclePriority={cyclePriority}
             search={search}
             filter={filter}
+            onReorder={handleReorder}
           />
         </div>
       </main>

@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { Circle, CheckCircle2, Flag, Trash2 } from "lucide-react";
+import { Circle, CheckCircle2, Flag, Trash2, GripVertical } from "lucide-react";
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 import { PRIORITIES } from "../constants";
 
 export default function TodoItem({
@@ -8,6 +10,14 @@ export default function TodoItem({
 }) {
   const [editing, setEditing] = useState(false);
   const [editText, setEditText] = useState(todo.text);
+
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: todo.id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : undefined,
+  };
 
   const handleStartEdit = () => {
     setEditing(true);
@@ -32,7 +42,7 @@ export default function TodoItem({
   };
 
   return (
-    <div className="stax-row stax-fade-in flex items-center gap-2.5 px-3 py-[11px] rounded-xl bg-surface-white border border-border-light">
+    <div ref={setNodeRef} style={style} className="stax-row stax-fade-in flex items-center gap-2.5 px-3 py-[11px] rounded-xl bg-surface-white border border-border-light">
       <button
         className="stax-checkbox bg-transparent border-none cursor-pointer p-0 flex shrink-0"
         onClick={() => onToggle(todo.id)}
@@ -84,6 +94,15 @@ export default function TodoItem({
         className="bg-transparent border-none text-text-lighter cursor-pointer p-1 flex shrink-0 hover:text-red-400 transition-colors"
       >
         <Trash2 size={15} />
+      </button>
+
+      <button
+        {...attributes}
+        {...listeners}
+        className="bg-transparent border-none text-text-lighter cursor-grab active:cursor-grabbing p-1 flex shrink-0 hover:text-text-primary transition-colors touch-none"
+        title="Drag to reorder"
+      >
+        <GripVertical size={15} />
       </button>
     </div>
   );
