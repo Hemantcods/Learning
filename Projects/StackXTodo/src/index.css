@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #F6F5F3;
+  --color-surface-dark: #14141C;
+  --color-surface-dark-hover: #1F1F2B;
+  --color-surface-white: #FFFFFF;
+  --color-surface-accent: #EDEBFC;
+  --color-surface-overlay: rgba(10, 10, 14, 0.45);
+  --color-surface-popover: #1F1F2B;
+
+  --color-text-primary: #16161F;
+  --color-text-secondary: #8A8A99;
+  --color-text-muted: #6E6D7A;
+  --color-text-light: #B6B5C3;
+  --color-text-lighter: #C9C8D6;
+  --color-text-sidebar: #E7E6EF;
+
+  --color-border-base: #E7E5E1;
+  --color-border-light: #EFEEEB;
+
+  --color-accent: #5B4FE0;
+  --color-accent-light: #7F77DD;
+
+  --color-priority-low: #8A8A99;
+  --color-priority-medium: #D9A125;
+  --color-priority-high: #E2683A;
+
+  --font-sans: 'Inter', -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; }
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  text-align: left;
+  border: none;
+  min-height: 100svh;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.stax-scroll::-webkit-scrollbar { width: 6px; }
+.stax-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 4px; }
+.stax-checkbox { transition: transform 0.12s ease; }
+.stax-checkbox:active { transform: scale(0.88); }
+.stax-row { transition: background 0.12s ease; }
+.stax-fade-in { animation: staxFadeIn 0.18s ease; }
+@keyframes staxFadeIn { from { opacity: 0; transform: translateY(2px); } to { opacity: 1; transform: translateY(0); } }
+.stax-folder-item:hover .stax-folder-menu-btn { opacity: 1; }
+input::placeholder, textarea::placeholder { color: #A8A7B3; }
+
+@media (max-width: 760px) {
+  .stax-mobile-only { display: flex !important; }
+}
